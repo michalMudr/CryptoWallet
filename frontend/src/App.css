@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: white; /* Set your light mode background color here */
+  color: black;
 }
 
 .App-logo {
@@ -35,4 +37,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App.dark-mode {
+  background-color: black; /* Set your dark mode background color here */
+  color: white; /* Set your dark mode text color here */
 }

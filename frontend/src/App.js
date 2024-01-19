@@ -27,9 +27,19 @@ class App extends Component {
   render() {
     return (
       <div className={`App ${this.state.darkMode ? 'dark-mode' : ''}`}>
-        <button onClick={this.toggleDarkMode}>
-          {this.state.darkMode ? 'Light Mode' : 'Dark Mode'}
-        </button>
+        <label className="toggle-label">
+          {this.state.darkMode ? 'Dark Mode' : 'Light Mode'}
+        </label>
+        <input
+          type="checkbox"
+          className="toggle-input"
+          checked={this.state.darkMode}
+          onChange={this.toggleDarkMode}
+        />
+        <div
+          className={`toggle-button ${this.state.darkMode ? 'checked' : ''}`}
+          onClick={this.toggleDarkMode}
+        ></div>
         <Status />
         <Send />
         <Transactions />

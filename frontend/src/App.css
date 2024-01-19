@@ -43,3 +43,52 @@
   background-color: black; /* Set your dark mode background color here */
   color: white; /* Set your dark mode text color here */
 }
+
+/* Toggle Button Styles */
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #a1a1a1;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.toggle-button::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(10, 10, 10);
+  border-radius: 50%;
+  transform: translateX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Checked (Dark Mode) State */
+.toggle-button.checked::before {
+  transform: translateX(-30px);
+  background-color: #ffffff; /* Change to your preferred dark mode color */
+}
+
+/* Hide the default checkbox input */
+.toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Center the toggle button text */
+.toggle-label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333; /* Change to your preferred text color */
+}

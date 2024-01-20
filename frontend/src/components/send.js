@@ -49,8 +49,8 @@ class Send extends Component {
     return (
         <Container>
   <br/>
-  <h3><b>SudoCoin</b></h3>
-  <h4><b style={{color: '#007bff'}}>Send dummy crypto to anyone.</b> </h4>
+  <h3><b>Yoobee Coin</b></h3>
+  <h4><b style={{color: '#007bff'}}>Send crypto securely to anyone.</b> </h4>
         <Form onSubmit={this.handleSubmit}>
         <Form.Group as={Row}>
          <Form.Label column sm="2">
@@ -67,7 +67,7 @@ class Send extends Component {
         <Col sm="2">
           <Form.Control onChange={this.handleAmount} placeholder="Amount" value={this.state.amount} />
         </Col>
-        <Col sm="0.5"><b> Sudo </b></Col>
+        <Col sm="0.5"><b> Yoobee </b></Col>
       </Form.Group>
       <Form.Group as={Row}>
       <Col sm="5">

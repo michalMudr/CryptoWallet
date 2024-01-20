@@ -9,8 +9,8 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/main" element={<Main />} />
+          <Route path="/login.js" element={<Login />} />
+          <Route path="/main.js" element={<Main />} />
           {/* Add more routes as needed */}
           <Route path="/" element={<Navigate to="/login" />} />
         </Routes>

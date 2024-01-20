@@ -18,31 +18,27 @@ from urllib.parse import urlparse
 from django.views.decorators.csrf import csrf_exempt
 
 
-def loginPage(request):
-    page = 'login'
+from django.contrib.auth import authenticate, login
+from django.http import JsonResponse
+
+def login_api(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         
-        try:
-            user = User.objects.get(username=username)
-        except:
-            messages.error(request, 'User does not exists')
-            
+        # Authenticate the user
         user = authenticate(request, username=username, password=password)
         
         if user is not None:
+            # Login the user
             login(request, user)
-            return redirect('userdashboard')
+            return JsonResponse({'success': True, 'message': 'Login successful'})
         else:
-            messages.error(request, 'Username OR password does not exist')   
-    
-    context = {'page' : page }
-    return render(request, 'base/login_register.html', context)
-
+            return JsonResponse({'success': False, 'message': 'Login failed. Check your credentials.'})
+        
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return JsonResponse({'success': True, 'message': 'Logout successful'})
 
 def registerPage(request):
     form = MyUserCreationForm()
@@ -54,11 +50,12 @@ def registerPage(request):
             user.username = user.username.lower()
             user.save()
             login(request, user)
-            return redirect('userdashboard')
+            return JsonResponse({'success': True, 'message': 'Registration successful'})
         else:
-         messages.error(request, form.errors)
-            
-    return render(request, 'base/login_register.html', {'form':form})
+            errors = dict(form.errors.items())
+            return JsonResponse({'success': False, 'errors': errors})
+
+    return render(request, 'base/login_register.html', {'form': form})
 
 def userdashboard(request):
     return render(request, 'base/userdashboard.html')

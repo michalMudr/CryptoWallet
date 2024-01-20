@@ -83,12 +83,13 @@
 /* Center the toggle button text */
 .toggle-label {
   position: absolute;
-  top: 50%;
+  top: 5%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  text-align: center;
+  text-align: top;
   font-size: 14px;
   font-weight: bold;
   color: #333; /* Change to your preferred text color */
 }
+

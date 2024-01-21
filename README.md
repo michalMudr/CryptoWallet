@@ -47,3 +47,9 @@ bash Copy code http://localhost:8000/admin/ Log in with the superuser credential
 Usage Explore the CryptoWallet application by creating and managing users. Customize the application according to your needs by modifying the Django project files. Contributing
 
 Support If you encounter any issues or have questions, please open an issue on GitHub.
+
+To start frontend react.js enter the frontend folder cd frontend
+
+and type npm start, the application will open in your default web browser. 
+
+Enjoy. 

@@ -1,0 +1,28 @@
+Django Start Up
+
+cd blockchain
+
+\Blockchain>python -m venv blockchain
+
+\Blockchain>blockchain\scripts\activate
+
+(blockchain) \Blockchain>cd backend
+
+(blockchain) \Blockchain\backend>python manage.py runserver localhost:8080
+
+
+React JS
+
+
+cd blockchain
+
+\Blockchain>cd frontend
+
+\Blockchain\frontend>npm start
+
+
+Password for user login
+
+User: regan
+
+Pass: regan11
